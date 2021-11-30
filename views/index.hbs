@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobBoard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="images/JobBoard.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Accueil</a>
+        </li>
+        {{#if session.connected }}
+         <li class="nav-item">
+          <a class="nav-link" href="/profile">Profil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/entreprises">Entreprises</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/offres">Offres</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/logout">Se déconnecter</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/entreprises">Entreprises</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/offres">Offres</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/connexion">Connexion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="inscription">Inscription</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--Main Section-->
+<section class="main py-5">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-7">
+        <h1>Vous êtes à la recherche d'emploi, alors n'hésitez pas!!</h1>
+        <button  class="btn btn-danger"><a href="inscription">Je crée mon compte</a></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Section 2-->
+
+<section class="comp py-5">
+  <div class="container-fluid py-5 text-center">
+    <h1> Vous avez des compétences?</h1>
+    <p>Alors notre mission est de vous aider à trouver le travail</p>
+    <button class= "btn btn-dark"> <a href="inscription"> Je crée mon profil</a> </button>
+  </div>
+</section>
+
+<!--Owl Caroussel-->
+
+
+
+<!--Section 3-->
+
+<section class="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+       <img class="img-fluid" src="images/1.jpg" alt="">
+      </div>
+      <div class="col-md-6 ">
+        <h3>Explorez</h3>
+        <h4 class="text text-danger">Trouvez votre passion</h4>
+        <p>Un métier ou une entreprise, ça se choisit en fonction de soi. Parcours, débouchés, valeurs ou encore ambitions futures, rien ne doit être laissé au hasard.
+
+          On vous dit tout ici, pour que vous puissiez vous épanouir à coup sûr dans la voie que vous aurez choisis.</p>
+        
+        <button class="btn btn-dark" > <a href="">Metiers</a></button> 
+        <button class="btn btn-dark" > <a href="">Entreprises</a></button> 
+
+
+      </div>
+
+      <div class="col-md-6 py-5">
+         <h3>On vous accompagne</h3>
+        <h4 class="text text-danger">Le metier idéal</h4>
+        <p>A l’aide de notre site web de nos differents partenaires, nous vous accompagnons à trouver le metier idéal, le metier en fonction de votre passion.
+           Un travail où vous puissiez vous épanuir.</p>
+
+
+
+           
+        <button class="btn btn-dark" > <a href="">Metiers</a>  </button> 
+       </div>
+
+       <div class="col-md-6 py-5">
+         <img class="img-fluid" src="images/2.jpg" alt="">
+       </div>
+  <div class="col-md-6 py-5">
+       <img class="img-fluid" src="images/3.jpg" alt="">
+      </div>
+      <div class="col-md-6 py-5">
+        <h3>Vous etes une entreprise?</h3>
+        <h4 class="text text-danger">Vous recrutez?</h4>
+        <p>Vous etes une entreprise et vous cherchez à recruter des jeunes diplomés, des jeunes au chomage en fonction de leurs compétences et non leurs diplomes? Vous etes au bon endroit.
+
+          N’hésitez donc pas et devenons ...</p>
+        
+        <button class="btn btn-dark" > <a href="">Partenaires</a></button>  
+
+
+      </div>
+      
+    </div>
+
+     
+  </div>
+</section>
+
+<!-- Remove the container if you want to extend the Footer to full width. -->
+
+
+  
+  <!-- Footer -->
+  <footer class="text-center text-white my-5" style="background-color: #000000; position:absolute; width: 100%; ">
+    <div class="container p-4 ">
+      
+      <section class="">
+        <p class="d-flex justify-content-center align-items-center">
+          <span class="me-3">JobBoard, nous prennons en compte vos compétences</span>
+        </p>
+      </section>
+      
+    </div>
+    
+
+    <!-- Copyright -->
+    <div class="text-center p-3 text-danger" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright:
+      <a class="text-danger" href="/">JobBoard</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  
+  
+
+<!-- End of .container -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

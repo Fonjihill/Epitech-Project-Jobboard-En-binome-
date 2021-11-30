@@ -1,0 +1,43 @@
+.main{
+    background: url(main1copy.jpg)no-repeat;
+    background-size: cover;
+    min-height: 95vh;
+    width: 100%;
+}
+
+.main h1{
+    font-size: 5rem;
+    font-weight: 800;
+    color: #000;
+}
+
+
+.btn.btn-danger{
+    border-radius: 15px;
+    margin-top: 16px;
+}
+
+button a{
+    text-decoration: none;
+    color: #fff;
+}
+button a:hover{
+    color: #fff;
+}
+
+.btn.btn-dark{
+    border-radius: 13px;
+
+}
+
+/*Profile view*/
+
+.avatar-ctn{
+    background: crimson;
+    text-align: center;
+}
+
+.avatar{
+    width: 65%;
+    border-bottom: 1px solid rgba(0,0,0, 0.125);
+}

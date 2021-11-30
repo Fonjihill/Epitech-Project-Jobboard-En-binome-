@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+      integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+  <title>Admin Panel</title>
+</head>
+<body>
+
+<!--SideBar end here-->
+
+<div id="page-content-wrapper">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+    <div class="d-flex align-items-center">
+      <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+      <h2 class="fs-2 m-0">Dashboard</h2>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a href="" class="nav-link dropdown-toggle second-text fw-bold" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user me-2"></i> 
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a href="" class="dropdown-item"></a>Profile</li>
+            <li><a href="/connexion" class="dropdown-item" ></a>Logout</li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid px-4">
+    <div class="row g-3 my-2">
+      <div class="col-md-3">
+        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+          <div>
+            <h3 class="fs-2">X</h3>
+            <p class="fs-5">Clients</p>
+          </div>
+          <i class="fas fa-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+          <div>
+            <h3 class="fs-2">X</h3>
+            <p class="fs-5">Companies</p>
+          </div>
+          <i class="fas fa-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+          <div>
+            <h3 class="fs-2">X</h3>
+            <p class="fs-5">Advertisement</p>
+          </div>
+          <i class="fas fa-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+        </div>
+      </div>
+    </div>
+  <div class="row my-5">
+        <h2 class="fs-2 m-0">Users</h2>
+        <div class="col">
+          <h5 class="text-center mb-5 mt-3">Users table</h5>
+          <table class="table">
+            <tr>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>EMAIL</th>
+              <th>PASSWORD</th>
+              <th>COMPAGNIE</th>
+              <th>UPDATE</th>
+              <th>DELETE</th>
+            </tr>  
+            {{#each users as |value key|}}
+            <tr>
+              <form action="/customers/{{this.id}}" method="post">
+                <td>{{this.id}}</td>
+                <td><input type="text" name="name" value="{{this.NAME}}"></td>
+                <td><input type="text" name="email" value="{{this.email}}"></td>
+                <td><input type="text" name="password" value="{{this.password}}"></td>
+                <td><input type="text" name="compagnie" value="{{this.compagnie}}"></td>
+                <td><input class="submit btn-success" type="submit" value="edit"></td>
+              </form>
+              <form action="/customersdel/{{this.id}}" method="post">
+                <td><input class="submit btn-danger" type="submit" value="delete"></td>
+              </form>
+            </tr>
+            {{/each}}
+          </table>
+          <h5 class="text-center mb-5 mt-5">Create User</h5>
+          <form class="text-center" action="/customers" method="post">
+                <td><input type="text" name="name" placeholder="name"></td>
+                <td><input type="email" name="email" placeholder="email" ></td>
+                <td><input type="text" name="password" placeholder="password" ></td>
+                <td><input type="text" name="compagnie" placeholder="compagnie" ></td>
+                <td><input class="submit btn-success" type="submit" value="create"></td>
+              </form>
+        </div>
+  </div>
+    <div class="row my-5">
+      <h3 class="fs-4 mb-3">Advertisement</h3>
+      <div class="col">
+        <h5 class="text-center mb-5 mt-3">Annonces table</h5>
+        <table class="table">
+            <tr>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>desc_courte</th>
+              <th>desc_long</th>
+              <th>type</th>
+              <th>id_comp</th>
+              <th>id_appy</th>
+              <th>UPDATE</th>
+              <th>DELETE</th>
+            </tr>
+            {{#each advs as |value key|}}
+            <tr>
+              <form action="/advs/{{this.id_adv}}" method="post">
+                <td>{{this.id_adv}}</td>
+                <td><input type="text" name="nom_adv" value="{{this.nom_adv}}"></td>
+                <td><input type="text" name="desc_courte" value="{{this.desc_courte}}"></td>
+                <td><input type="text" name="desc_long" value="{{this.desc_long}}"></td>
+                <td><input type="text" name="type_adv" value="{{type_adv}}"></td>
+                <td><input type="text" name="id_comp" value="{{this.id_comp}}"></td>
+                <td><input type="text" name="id_apply" value="{{this.id_apply}}"></td>
+                <td><input class="submit btn-success" type="submit" value="edit"></td>
+              </form>
+              <form action="/advsdel/{{this.id_adv}}" method="post">
+                <td><input class="submit btn-danger" type="submit" value="delete"></td>
+              </form>
+              </tr>
+            {{/each}}
+            </table>
+    </div>
+  </div>
+   <div class="row my-5">
+      <h3 class="fs-4 mb-3">Compagnies</h3>
+      <div class="col">
+        <h5 class="text-center mb-5 mt-3">Compagnie table</h5>
+        <table class="table">
+            <tr>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>info</th>
+              <th>secteur</th>
+              <th>id_adv</th>
+              <th>UPDATE</th>
+              <th>DELETE</th>
+            </tr>
+            {{#each cmp as |value key|}}
+            <tr>
+              <form action="/cmps/{{this.id_comp}}" method="post">
+                <td>{{this.id_comp}}</td>
+                <td><input type="text" name="name_comp" value="{{this.name_comp}}"></td>
+                <td><input type="text" name="info_comp" value="{{this.info_comp}}"></td>
+                <td><input type="text" name="secteur" value="{{this.secteur}}"></td>
+                <td><input type="text" name="id_adv" value="{{this.id_adv}}"></td>
+                <td><input class="submit btn-success" type="submit" value="edit"></td>
+              </form>
+              <form action="/advsdel/{{this.id_adv}}" method="post">
+                <td><input class="submit btn-danger" type="submit" value="delete"></td>
+              </form>
+              </tr>
+            {{/each}}
+            </table>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <script>
+   var a =document.getElementById("wrapper")
+   var toggle = document.getElementById("menu-toggle")
+
+   toggle.onclick = function(){
+     a.classList.toggle("toggled")
+   }
+ </script>
+</body>
+</html>

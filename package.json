@@ -1,0 +1,45 @@
+{
+  "name": "jobboard",
+  "version": "1.0.0",
+  "description": " a job board is a website that posts jobs supplied by employers, whereas job search engines scour the web and aggregate job listings from job boards and employer websites.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:samy2rafraf/JobBoard.git"
+  },
+  "keywords": [
+    "empty"
+  ],
+  "author": "Fonji Terence and Samy RAFRAF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EpitechMscProPromo2024/T-WEB-501-LYN-5-1-jobboard-samy2.rafraf/issues"
+  },
+  "homepage": "https://github.com/EpitechMscProPromo2024/T-WEB-501-LYN-5-1-jobboard-samy2.rafraf#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.1.1",
+    "connect-redis": "^6.0.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "hbs": "^4.1.2",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "node-fetch": "^3.0.0",
+    "path": "^0.12.7",
+    "redis": "^3.1.2",
+    "router": "^1.3.5",
+    "util": "^0.12.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
